@@ -1,0 +1,1 @@
+TFCCTF{wmiexec_smb_127.0.0.1_admin$}
