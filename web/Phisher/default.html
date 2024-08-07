@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #2d2d2d;
+            padding: 20px 40px;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 8px solid #4caf50;
+        }
+
+        .container h1 {
+            color: #4caf50;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .container p {
+            color: #cfcfcf;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .container p span {
+            color: #4caf50;
+            font-size: 14px;
+        }
+
+        .container a {
+            color: #4caf50;
+            text-decoration: none;
+            border: 2px solid #4caf50;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .container a:hover {
+            background-color: #4caf50;
+            color: #1a1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Phisher!</h1>
+        <p>The challenge is split into two parts:</p>
+        <p>The email app on <a href="http://mail.phisher.tfc">mail.phisher.tfc</a>.</p>
+        <p>The dashboard on <a href="http://dashboard.phisher.tfc">dashboard.phisher.tfc</a>.</p>
+        <p>Make sure you add these two entries in your /etc/hosts file in order to interact with the challenge!</p>
+        <p>Also, don't forget to add the port to the hostnames...</p>
+        <p>Good luck and have fun!</p>
+    </div>
+</body>
+</html>

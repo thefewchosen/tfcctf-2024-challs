@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <h1>Mail App</h1>
+        </div>
+        <div class="navbar-menu">
+            {% if 'email' in session %}
+                <a href="{{ url_for('logout') }}" class="navbar-item">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}" class="navbar-item">Login</a>
+                <a href="{{ url_for('register') }}" class="navbar-item">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    <div class="flash-container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-message">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    {% block content %}{% endblock %}
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const flashMessage = document.querySelector('.flash-message');
+        if (flashMessage) {
+            setTimeout(function () {
+                flashMessage.style.display = 'none';
+            }, 5000);
+        }
+    });
+</script>
+</html>
+

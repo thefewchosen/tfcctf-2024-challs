@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+    <h2>Hello, {{ username }}!</h2>
+    <p>Welcome to Phisher, the best advertising app in the world!</p>
+    <button onclick=window.location.href="{{ url_for('refer') }}">Refer a Friend</button>
+    <button onclick=window.location.href="{{ url_for('logout') }}">Logout</button>
+{% endblock %}

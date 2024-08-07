@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>PNGiphy</title>
+     <link rel="stylesheet" href="/static/style.css">
+     <script src="/static/main.js"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ </head>
+ <body>
+     <div class="container">
+         <header>
+             <h1>PNGiphy</h1>
+             <a href="/upload" class="top-button">Upload your PNG</a>
+         </header>
+         <main id="gallery">
+         </main>
+     </div>
+ 
+     <div id="popup" class="popup">
+         <span class="close" onclick="closePopup()">&times;</span>
+         <img class="popup-content" id="popup-img">
+     </div>
+
+     <div id="customAlert" class="custom-alert">
+        <p id="customAlertMessage"></p>
+        <button onclick="closeCustomAlert()" class="pixel-button">OK</button>
+      </div>
+
+     <script>
+         window.onload = function() {
+          fetchImages();
+          const urlParams = new URLSearchParams(window.location.search);
+          const imageId = urlParams.get('image');
+          if (imageId) {
+            openPopup(`/static/images/${imageId}`);
+          }
+        }
+     </script>
+ </body>
+ </html>
+ 

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="inbox-container">
+    <div id="email-list">
+    </div>
+    <div id="email-content">
+        <iframe id="email-iframe" sandbox="allow-same-origin"></iframe>
+    </div>
+    <button class="trash-button" onclick="deleteInbox()">Delete All Emails</button>
+</div>
+
+<script>
+    // Fetch emails from the API
+    fetch('/api/inbox')
+        .then(response => response.json())
+        .then(emails => {
+            const emailList = document.getElementById('email-list');
+            emails.forEach((email, index) => {
+                const emailItem = document.createElement('div');
+                emailItem.className = 'email-item';
+                emailItem.setAttribute('data-email-index', index);
+
+                emailItem.innerHTML = `
+                    <div>
+                        <strong>From:</strong> ${email.from}<br>
+                        <strong>Subject:</strong> ${email.subject}
+                    </div>
+                `;
+
+                emailItem.addEventListener('click', () => {
+                    document.getElementById('email-iframe').srcdoc = email.body;
+                });
+
+                emailList.appendChild(emailItem);
+            });
+        });
+
+    function deleteInbox() {
+        fetch('/api/inbox', { method: 'DELETE' })
+            .then(() => {
+                document.getElementById('email-list').innerHTML = '';
+                document.getElementById('email-iframe').srcdoc = '';
+            });
+    }
+</script>
+{% endblock %}

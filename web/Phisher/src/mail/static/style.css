@@ -1,0 +1,226 @@
+/* Importing a New Pixelated Font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'VT323', monospace;
+    background-color: #0f0f0f;
+    color: #cfcfcf;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1e1e1e;
+    color: #cfcfcf;
+    border-bottom: 4px solid #4caf50;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar-brand h1 {
+    font-size: 40px;
+    margin: 0;
+    color: #4caf50;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 15px;
+   
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+.navbar-item {
+    font-size: 24px;
+    color: #4caf50;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px solid #4caf50;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+}
+
+.navbar-item:hover {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+/* Centered Form */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 200px);
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 130px;
+    background-color: #2a2a2a;
+    border: 8px solid #333;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    font-size: 26px;
+    color: #4caf50;
+}
+
+input[type="email"], input[type="password"] {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    padding: 12px;
+    width: 100%;
+    max-width: 300px;
+    border: 4px solid #333;
+    border-radius: 6px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    font-size: 24px;
+    padding: 12px 24px;
+    margin-top: 6px;
+    color: #fff;
+    background-color: #4caf50;
+    border: 4px solid #388e3c;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px #2c6c2f;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+input[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+input[type="submit"]:active {
+    box-shadow: 0 2px #2c6c2f;
+    transform: translateY(2px);
+}
+
+/* Inbox Styles */
+.inbox-container {
+    display: flex;
+    height: calc(100vh - 180px);
+    margin-top: 80px;
+    margin-bottom: 60px;
+    flex-grow: 1;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border: 8px solid #333;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#email-list {
+    width: 30%;
+    border-right: 1px solid #333;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#email-content {
+    width: 70%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #444;
+}
+
+.email-item {
+    font-size: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    background-color: #555;
+    margin-bottom: 10px;
+}
+
+.email-item:hover {
+    background-color: #666;
+}
+
+.trash-button {
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    width: calc(100% - 10px);
+    color: #ff5722;
+    cursor: pointer;
+    padding: 12px;
+    border: 4px solid #ff5722;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.trash-button:hover {
+    background-color: #ff5722;
+    color: #fff;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Flash Messages Styles */
+.flash-message {
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+    padding: 10px;
+    border-radius: 8px;
+    position: fixed;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1100;
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    max-width: 600px;
+}

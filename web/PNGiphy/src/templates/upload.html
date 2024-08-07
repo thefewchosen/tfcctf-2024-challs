@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNGiphy</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Upload Your PNG</h1>
+        <div class="upload-section">
+            <label for="fileInput" class="pixel-button">Choose File</label>
+            <input type="file" id="fileInput" name="file" style="display: none;" onchange="previewImage(event)">
+            <span id="fileName" class="file-name">No file chosen</span>
+            <div id="imagePreview" class="image-preview"></div>
+            <button onclick="uploadImage()" class="pixel-button">Upload</button>
+        </div>
+        <a href="index.html" class="pixel-button">Back Home</a>
+    </div>
+
+    <div id="customAlert" class="custom-alert">
+      <p id="customAlertMessage"></p>
+      <button onclick="closeCustomAlert()" class="pixel-button">OK</button>
+    </div>
+</body>
+</html>

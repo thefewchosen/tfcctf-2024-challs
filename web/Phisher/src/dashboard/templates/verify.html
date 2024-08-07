@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Phisher - Verify{% endblock %}
+{% block content %}
+    <h2>Verify</h2>
+    <form method="post">
+        <label for="code">Verification Code:</label>
+        <input type="text" name="code" required><br><br>
+        <button type="submit">Verify</button>
+    </form>
+{% endblock %}
