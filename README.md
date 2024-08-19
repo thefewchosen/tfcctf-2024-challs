@@ -59,7 +59,7 @@ Challenge|Author|Difficulty|Solves
 [guard-the-bypass](./pwn/guard-the-bypass/)|Luma|Easy|63
 [mcback2dabasics](./pwn/mcback2dabasics/)|Mcsky23|Medium|10
 [VSPM](./pwn/VSPM/)|Luma|Medium|39
-lumapci|Livian|Hard|2
+[lumapci](./pwn/lumapci/)|Livian|Hard|2
 [mctabletrap](./pwn/mctabletrap/)|Mcsky23|Hard|2
 [virtual](./pwn/virtual/)|Luma|Hard|16
 [mcguava](./pwn/mcguava/)|Mcsky23|Insane|7
