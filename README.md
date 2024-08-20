@@ -17,10 +17,10 @@ Challenge|Author|Difficulty|Solves
 
 Challenge|Author|Difficulty|Solves
 -|-|-|-
-Greetings|skyv3il|Warmup|234
-Surfing|skyv3il|Easy|42
+[Greetings](./web/greetings/)|skyv3il|Warmup|234
+[Surfing](./web/surfing/)|skyv3il|Easy|42
 [Funny](./web/funny/)|hofill|Medium|34
-safe_content|skyv3il|Medium|87
+[safe_content](./web/safe_content/)|skyv3il|Medium|87
 Sagigram|Sagi|Medium|15
 Flask Destroyer|Sagi|Hard|14
 [PNGiphy](./web/PNGiphy/)|Mtib|Hard|8

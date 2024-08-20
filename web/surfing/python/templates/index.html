@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFC Content Fetcher #1</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+            background-color: #f9f4e9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #f06292;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form label {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+            width: 100%;
+            text-align: center;
+        }
+        form input[type="text"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        form input[type="text"]:focus {
+            border-color: #f06292;
+            outline: none;
+        }
+        form button {
+            cursor: pointer;
+            padding: 12px 24px;
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        form button:hover {
+            background-color: #e91e63;
+            transform: translateY(-2px);
+        }
+        form button:active {
+            background-color: #d81b60;
+            transform: translateY(0);
+        }
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            text-align: left;
+            color: #333;
+        }
+        .error {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Photo Fetcher</h1>
+        <h1>Enjoy your ride</h1>
+        <!--  Reminder ! Change creds for admin panel on localhost:8000  ! -->   
+        <form id="fetchForm">
+            <label for="url">Enter Google.com URL (png files only):</label>
+            <input type="text" id="url" name="url" required>
+            <button type="submit">Fetch Content</button>
+        </form>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('fetchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            const url = document.getElementById('url').value;
+            fetchContent(url);
+        });
+
+        function fetchContent(url) {
+            // Construct the API request URL
+            const apiUrl = `/get?url=${encodeURIComponent(url)}`;
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const outputDiv = document.getElementById('output');
+                    if (data.error) {
+                        outputDiv.innerHTML = `<p class="error">${data.error}</p><br><p class="error">${data.output}</p>`;
+                    } else {
+                        outputDiv.textContent = data.output;
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('output').innerHTML = `<p class="error">Error: ${error}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>

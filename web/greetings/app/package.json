@@ -1,0 +1,13 @@
+{
+  "name": "vulnerable-app",
+  "version": "1.0.0",
+  "description": "An Express.js app vulnerable to SSTI",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
+  }
+}
